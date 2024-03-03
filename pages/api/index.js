@@ -1,3 +1,3 @@
-module.exports = (req, res) => {
-    res.status(200).send("API is OK.");
-};
+export default function handler(req, res) {
+    res.status(200).json({ message: 'API is OK.' })
+}
