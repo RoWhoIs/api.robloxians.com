@@ -1,3 +1,10 @@
+/*
+    Used for fetching followers for the creator of RoWhoIs to provide users who follow her with an easter egg on their whois profile.
+    Developed by RoWhoIs
+
+    CONTRIBUTORS:
+    https://github.com/aut-mn
+*/
 import axios from 'axios';
 
 let requestTimestamps = [];
@@ -14,7 +21,7 @@ function isRateLimited() {
 }
 
 export default async function handler(req, res) {
-    if (isRateLimited()) {
+    if (isRateLimited()) { // ALWAYS check for rate limiting first!
         res.status(429).json({ error: 'Too Many Requests' });
         return;
     }
